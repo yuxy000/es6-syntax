@@ -8,6 +8,70 @@
     <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
 </head>
 <body>
-    
+    <script type="text/babel">
+        /*
+            Array,from()
+        */
+
+        // let arrayLike = {
+        //     '0': 'a',
+        //     '1': 'b',
+        //     '2': 'c',
+        //     length:3
+        // };
+
+        // //es5
+        // var arr1 = [].slice.call(arrayLike);
+        // // es6
+        // let arr2 = Array.from(arrayLike);
+        // console.log('====================================');
+        // console.log(arr1, arr2);
+        // console.log('====================================');
+
+        // console.log('====================================');
+        // console.log(Array.from('hello'));
+        // console.log(Array.from(new Set(['a', 'b'])));
+        // console.log('====================================');
+
+        // console.log('====================================');
+        // console.log(Array.from({length: 3}));
+        // console.log('====================================');
+
+        // console.log('====================================');
+        // console.log(Array.from([1,2,3], (x) => x * x)); //等价于Array.from([1,2,3]).map(x => x * x);
+        // //将数组中布尔值为false的成员转为0。
+        // console.log(Array.from([1,,2,,3], (n) => n || 0));
+        // console.log('====================================');
+
+        // function typesOf() {
+        //     return Array.from(arguments, value => typeof value);
+        // }
+
+        // console.log('====================================');
+        // console.log(typesOf(null, [], NaN));
+        // console.log('====================================');
+
+        /*
+            Array.of方法用于将一组值， 转换为数组。
+        */
+
+        // console.log('====================================');
+        // console.log(Array.of(3,4,33));
+        // console.log(Array.of(3));
+        // console.log(Array.of(3,4,33).length);
+        // console.log('====================================');
+
+        /*
+            copyWithin方法， 在当前数组内部， 将指定位置的成员复制到其他位置（会覆盖原有成员） ， 然后返回当前数组。
+            Array.prototype.copyWithin(target, start = 0, end = this.length)
+                target（必需） ： 从该位置开始替换数据。
+                start（可选） ： 从该位置开始读取数据， 默认为0。 如果为负值， 表示倒数。
+                end（可选） ： 到该位置前停止读取数据， 默认等于数组长度。 如果为负值， 表示倒数。   
+        */
+
+        console.log('====================================');
+        console.log([1,2,3,4,5,6,7].copyWithin(0,3));
+        console.log('====================================');
+    </script>
 </body>
 </html>
