@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js" ></script>
+		<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+
+	</head>
+	<body>
+		<div id="result">
+			
+		</div>
+		<script type="text/babel">
+			// var resultstr;
+			// const [a,b,c,d,e] = 'hello';
+			// resultstr = a + ',' +b + ',' + c + ',' + d + ',' + e;
+			
+			// let {length: len} = 'hello';
+			// resultstr += "<br/>hello's length:" + len;
+			
+			// function add([x,y]) {
+			// 	return x + y;
+			// }
+			
+			// resultstr += "<br/> add(2, 3)的结果:" + add([2, 3]);
+			
+			// $("#result").html(resultstr);
+
+			//**********************数组的解构赋值***************************
+			// let [a,b,c] = [1,2,3];
+
+			// let [foo, [[bar], baz]] = [1, [[2], 3]];
+			// alert(bar);
+
+			// let [,,third] = ['foo','bar', 'baz'];
+			// console.log(third);
+
+			// let [x,,y] = [1,2,3];
+			// console.log(x,y);
+
+			// let [head,...tail] = [1,2,3,4];
+			// console.log(head, tail);
+
+			// let [x,y,...z] = ['a'];
+			// console.log(x,y,z);
+
+			// let [foo] = 1;//报错 不具备iterator接口
+
+			// let [x,y,z] = new Set(['a','b','c']);
+			// console.log(x,y,z);
+
+			//默认值
+			// let [foo=true] = [];
+			// console.log('====================================');
+			// console.log(foo);
+			// console.log('====================================');
+			
+			// let [x,y = 'b'] = ['a'];
+			// console.log('====================================');
+			// console.log(x,y);
+			// console.log('====================================');
+
+			// let [x,y = 'b'] = ['a', undefined];
+			// console.log('====================================');
+			// console.log(x,y);
+			// console.log('====================================');
+
+			// var [x = 1] = [undefined];
+			// console.log('====================================');
+			// console.log(x);
+			// console.log('====================================');
+			// let [y = 1] = [null];
+			// console.log('====================================');
+			// console.log(y);
+			// console.log('===================================='); 
+
+			// let [x = 2, y = x] = [];
+			// console.log('====================================');
+			// console.log(x,y);
+			// console.log('====================================');
+			// let [a = b, b = 1] = []; //这个没有报错，不知道为什么
+			// console.log('====================================');
+			// console.log(a,b);
+			// console.log('====================================');
+
+			//**********************END 数组的解构赋值***************************
+
+			//**********************START 对象的解构赋值***************************
+				// let { foo, bar } = {foo: 'aaa', bar: 'bbb'};
+				// console.log('====================================');
+				// console.log(foo, bar);
+				// console.log('====================================');
+
+				// let { baz } = { foo: 'aaa', bar: 'bbb' };
+				// console.log('====================================');
+				// console.log(baz);//undefined
+				// console.log('====================================');
+
+				// let { foo:baz } =  { foo: 'aaa', bar: 'bbb' };
+				// console.log('====================================');
+				// console.log(baz, foo);//aaa error: foo is not defined
+
+				// console.log('====================================');
+
+				// let obj = { first: 'hello', last: 'world' };
+				// let { first: f, last: l } = obj;
+				// console.log('====================================');
+				// console.log(f,l);// hello world
+				// console.log('====================================');
+
+				// let foo;
+				// let { foo } = { foo: 1 };//// SyntaxError: Duplicate declaration "foo"
+
+				// let foo;
+				// ({ foo } = {foo: 2});
+				// let baz;
+				// ({ bar: baz } = { bar: 3 });
+
+				// let obj = {
+				// 	p: [
+				// 		'Hello',
+				// 		{ y: 'World' }
+				// 	]
+				// };
+
+				// let { p: [x, { y }] } = obj;
+				// console.log('====================================');
+				// console.log( x, y);
+				// console.log('====================================');
+
+				// let obj = {};
+				// let arr = [];
+				// ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
+				// console.log('====================================');
+				// console.log(obj, arr); //{prop:123} [true]
+				// console.log('====================================');
+				
+				// let { x = 3 } = {};
+				// console.log('====================================');
+				// console.log(x);
+				// console.log('====================================');
+
+				// let { x, y = 5 } = { x:3 }
+				// console.log('====================================');
+				// console.log(x,y);//3 5
+				// console.log('====================================');
+
+				// var arr = [1,2,3];
+				// var { 0: first, [arr.length - 1]: last } = arr;
+				// console.log('====================================');
+				// console.log(first, last);//1 3
+				// console.log('====================================');
+				
+			//**********************END 对象的解构赋值***************************
+
+			//********************START 字符串的解构赋值***********************
+				
+			// const [a,b,c,d,e] = 'hello';
+			// console.log('====================================');
+			// console.log(a,b,c,d,e);// h e l l o
+			// console.log('====================================');
+
+
+			// let { length: len } = 'hellow';
+			// console.log('====================================');
+			// console.log(len);//6
+			// console.log('====================================');
+
+			//********************END 字符串的解构赋值***********************
+
+			//********************START 数值和布尔值的解构赋值***********************
+			// let {toString: s} = 123;
+			// console.log('====================================');
+			// console.log(s === Number.prototype.toString);
+			// console.log('====================================');
+
+			// let {toString: s} = true;
+			// console.log('====================================');
+			// console.log(s === Boolean.prototype.toString);
+			// console.log('====================================');
+
+			//********************END 数值和布尔值的解构赋值***********************
+
+			//*******************START 函数参数的解构赋值*****************
+			// function add([x, y]) {
+			// 	return x + y;
+			// }
+
+			// console.log('====================================');
+			// console.log(add([2, 4]));//6
+			// console.log('====================================');
+
+			// console.log('====================================');
+			// console.log([[1, 2], [3, 4]].map(([x, y]) => x + y)); //[3, 7]
+			// console.log('====================================');
+
+			// function move({x = 0, y = 0} = {}) {
+			// 	return [x, y];
+			// }
+
+			// console.log('====================================');
+			// console.log(move({x: 3, y: 8}));
+			// console.log(move({x: 3}));
+			// console.log(move({}));
+			// console.log(move());
+			// console.log('====================================');
+			//*******************END 函数参数的解构赋值*****************
+
+		</script>
+
+		<script src="./js/numericalextension.js" type="text/babel"></script>
+	</body>
+</html>
