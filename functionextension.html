@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的扩展</title>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        // function log(x, y = "world") {
+        //     console.log(x, y);
+        // }
+
+        // log('Hello');
+        // log('hello', 'China');
+        // log('Hello', '');
+
+        // function Point(x = 0, y = 0) {
+        //     this.x = x;
+        //     this.y = y;
+        // }
+
+        // console.log('====================================');
+        // console.log(new Point());
+        // console.log('====================================');
+
+
+        // function foo({ x, y = 5 }) {
+        //     console.log(x, y);
+        // }
+
+        // foo({});
+        // foo({x: 1});
+        // foo({x: 1, y: 2});
+        // foo(); //TypeError: Cannot read property 'x' of undefined
+
+        /*
+            rest参数（形式为“...变量名”） ， 用于获取函数的多余参数 
+            rest参数搭配的变量是一个数组， 该变量将多余的参数放入数组中。
+        */
+        // function add(...values) {
+        //     let sum = 0;
+
+        //     for( let val of values) {
+        //         sum += val;
+        //     }
+
+        //     return sum;
+        // }
+
+        // console.log('====================================');
+        // console.log(add(1,2,3,4)); //10
+        // console.log('====================================');
+
+        // function push(array, ...items) {
+        //     items.forEach(function(item) {
+        //         array.push(item);
+        //         console.log(item);
+        //     }, this);
+        // }
+
+        // var a = [];
+        // push(a, 1, 2, 3);
+        // console.log('====================================');
+        // console.log(a);
+        // console.log('====================================');
+
+        /*
+            扩展运算符 ...
+        */
+        // console.log('====================================');
+        // console.log(...[1, 2, 3]);//1 2 3
+        // console.log(1, ...[1, 2, 3], 4);//1 1 2 3 4
+        // console.log(Math.max(...[13, 2,45]));
+        // console.log('====================================');
+
+        //合并数组
+        // var arr1 = ['a', 'b'];
+        // var arr2 = ['c'];
+        // var arr3 = ['d', 'e'];
+        // console.log('====================================');
+        // console.log([...arr1, ...arr2, ...arr3]);
+        // console.log('====================================');
+
+        console.log('====================================');
+        console.log([...'hello']);
+        console.log('====================================');
+    </script>
+</body>
+</html>
