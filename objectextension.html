@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象扩展</title>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        // var foo = 'bar';
+        // var baz = {foo};
+        // console.log('====================================');
+        // console.log(baz);
+        // console.log('====================================');
+
+        // function f(x, y) {
+        //     return {x, y};
+        // }
+
+        // console.log('====================================');
+        // console.log(f(1, 2));
+        // console.log('====================================');
+
+        // var birth = '2000/01/01';
+        // var Person = {
+        //     name: 'zhangsan',
+        //     birth,
+        //     get firstName() {return 'YU'},
+        //     hello(){ console.log(`我的名字是${this.name}`) }
+        // }
+
+        // console.log('====================================');
+        // console.log(Person);
+        // console.log(Person.firstName.name);
+        // console.log(Person.hello.name);
+        // console.log((new Function()).name);
+        // console.log('====================================');
+
+        /*
+            Object.assign方法用于对象的合并， 将源对象（source） 的所有可枚举属性， 复制到目标对象（target） 。
+        */
+
+        // var target = { a: 1, b: 1 };
+        // var source1 = { b: 2, c: 2 };
+        // var source2 =  { c: 3 };
+        // Object.assign(target, source1, source2);
+        // console.log('====================================');
+        // console.log(target, source1, source2);
+        // console.log('====================================');
+
+         /*
+            Object.setPrototypeOf 用来设置一个对象的prototype对象
+        */
+
+        // let proto = {};
+        // let obj = { x: 10 };
+
+        // Object.setPrototypeOf(obj, proto);
+
+        // proto.y = 20;
+        // proto.z = 40;
+
+        // console.log('====================================');
+        // console.log(obj.x, obj.y, obj.z);//10 20 40
+        // console.log('====================================');
+
+        /*
+            Object.getPrototypeOf() 用于读取一个对象的prototype对象。
+        */
+
+        // function Rectangle() {
+
+        // }
+
+        // var rect = new Rectangle();
+
+        // console.log('====================================');
+        // console.log(Object.getPrototypeOf(rect) === Rectangle.prototype); //true
+        // console.log('====================================');
+
+        /*
+            Object.keys
+            Object.values
+            Object.entries
+        */
+
+        // let { keys, values, entries } = Object;
+
+        // let obj = {
+        //     a: 1,
+        //     b: 2,
+        //     c: 3
+        // };
+
+        // for(let key of keys(obj)) {
+        //     console.log('====================================');
+        //     console.log(key);
+        //     console.log('====================================');
+        // }
+
+        // for(let value of values(obj)) {
+        //     console.log('====================================');
+        //     console.log(value);
+        //     console.log('====================================');
+        // }
+
+        // for (let [key, value] of entries(obj)) {
+        //     console.log('====================================');
+        //     console.log([key, value]);
+        //     console.log('====================================');
+        // }
+
+        // var obj = { foo: 'bar', baz: 42 };
+        // var map = new Map(Object.entries(obj));
+        // console.log('====================================');
+        // console.log(map);
+        // console.log('====================================');
+
+        /*
+            Rest解构赋值
+        */
+        // let { x, y, ...z } = {x: 1, y: 2, z: 3, a: 4};
+        // console.log('====================================');
+        // console.log(x, y, z);
+        // console.log('====================================');
+
+        /*
+            扩展运算符...
+        */
+
+        // let z = { a: 3, b: 4 };
+        // let n = {...z};
+        // console.log('====================================');
+        // console.log(n);
+        // console.log('====================================');
+
+        /*
+            Object.getOwnPropertyDescriptors方法， 返回指定对象所有自身属性（非继承属性） 的描述对象。
+        */
+
+        const obj = {
+            foo: 123,
+            get bar() { return 'abc'; }
+        }
+
+        console.log('====================================');
+        console.log(Object.getOwnPropertyDescriptors(obj));
+        console.log('====================================');
+    </script>
+</body>
+</html>
